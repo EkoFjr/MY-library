@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         databaseHelper = new DatabaseHelper(this);
-        tvnames = (TextView) findViewById(R.id.tvnames);
 
+        tvnames = (TextView) findViewById(R.id.tvnames);
         btnStore = (Button) findViewById(R.id.btnstore);
         btnGetall = (Button) findViewById(R.id.btnget);
         etname = (EditText) findViewById(R.id.etname);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                databaseHelper.addSudentDetai(etname.getText().toString());
+                databaseHelper.addStudentDetail(etname.getText().toString());
                 etname.setText("");
                 Toast.makeText(MainActivity.this, "Stored Successfully", Toast.LENGTH_SHORT).show();
             }
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         btnGetall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                arrayList = databaseHelper.getAllStudentsLints();
+                arrayList = databaseHelper.getAllStudeslist();
                 tvnames.setText("");
                 for (int i = 0; i < arrayList.size(); i++) {
                     tvnames.setText(tvnames.getText().toString()+","+ arrayList.get(i));
